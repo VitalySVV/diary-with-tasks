@@ -2,6 +2,12 @@ import './App.css';
 import Button from './components/Button/Button';
 import CardButton from './components/CardButton/CardButton';
 import JournalIteam from './components/JournalIteam/JournalIteam';
+import LeftPanel from './layout/LeftPanel/LeftPanel';
+import Header from './components/Header/Header';
+import JournalList from './components/JournalList/JournalList';
+import Body from './layout/Body/Body';
+import JournalAddButton from './components/JournalAddButton/JournalAddButton';
+
 function App() {
 	const data = [
 		{
@@ -17,29 +23,35 @@ function App() {
 	];
 
 	return (
-		<>
-			<h1>Заголовок</h1>
-			<p>Какой-то текст</p>
-			<Button/>
-			<CardButton>
-        Новое воспоминание
-			</CardButton>
-			<CardButton>
-				<JournalIteam
-					title = {data[0].title}
-					text = {data[0].text}
-					date = {data[0].date}
-				/>
-			</CardButton>
-			<CardButton>
-				<JournalIteam
-					title = {data[1].title}
-					text = {data[1].text}
-					date = {data[1].date}
-				/>
-			</CardButton>
-		</> 
+		<div className='app '>
+			<LeftPanel>
+				<Header/>
+				<JournalAddButton/>
+				<JournalList>
+					<CardButton>
+						<JournalIteam
+							title = {data[0].title}
+							text = {data[0].text}
+							date = {data[0].date}
+						/>
+					</CardButton>
+					<CardButton>
+						<JournalIteam
+							title = {data[1].title}
+							text = {data[1].text}
+							date = {data[1].date}
+						/>
+					</CardButton>
+				</JournalList>
+			</LeftPanel>
+			<Body>
+				Body
+				<Button/>
+			</Body>
+		</div> 
 	); 
 }
 
 export default App;
+
+
