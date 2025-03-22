@@ -1,5 +1,4 @@
 import './App.css';
-import Button from './components/Button/Button';
 import CardButton from './components/CardButton/CardButton';
 import JournalIteam from './components/JournalIteam/JournalIteam';
 import LeftPanel from './layout/LeftPanel/LeftPanel';
@@ -7,6 +6,8 @@ import Header from './components/Header/Header';
 import JournalList from './components/JournalList/JournalList';
 import Body from './layout/Body/Body';
 import JournalAddButton from './components/JournalAddButton/JournalAddButton';
+import JournalForm from './components/JournalForm/JournalForm';
+
 
 function App() {
 	const data = [
@@ -17,7 +18,7 @@ function App() {
 		},
 		{
 			title: 'Походы в горы', 
-			text: 'Думал, что очень много времени',
+			text: 'Думал, что очень много времени', 
 			date: new Date()
 		}
 	];
@@ -45,8 +46,7 @@ function App() {
 				</JournalList>
 			</LeftPanel>
 			<Body>
-				Body
-				<Button/>
+				<JournalForm/>
 			</Body>
 		</div> 
 	); 
